@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 
 const Card = styled.div`
-  background: rgba(0, 0, 0, 0.4);
+  background: #E5D352;
   border: 3px solid black;
   color: white;
   margin: 20px;
@@ -18,32 +18,35 @@ const Image = styled.img`
   height: 75px;
 `;
 
+const StyledH2 = styled.h2`
+color: #757780;
+`;
+
+const StyledDiv = styled.div`
+color: #757780;
+`;
+
 export default function CharacterCard(props) {
   const { name, status, species, image, id, match } = props.character;
   console.log(id);
 
     return (
       <Card className="character-card">
-        <Link to={`/character-list/`}>
 
-          <div className="character-photo">
-            <Image src={image} alt="" />
-          </div>
+        <StyledDiv className="character-photo">
+         <Image src={image} alt="" />
+        </StyledDiv>
 
-          <div className="status">	
-            <h2>{name}</h2>
-          </div>	
+        <StyledH2>{name}</StyledH2>
 
-          <div className="status">
-            Status: <em>{status}</em>
-          </div>
-          
-          <div className="species">
-            Species: <em>{species}</em>
-          </div>
+        <StyledDiv className="status">
+          Status: <em>{status}</em>
+        </StyledDiv>
 
-          <span>todo: character</span>
-        </Link>
+        <StyledDiv className="species">
+          Species: <em>{species}</em>
+        </StyledDiv>
+        
       </Card>
     );
   }

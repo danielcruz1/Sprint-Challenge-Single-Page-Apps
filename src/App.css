@@ -1,6 +1,6 @@
 
 .character-list {
-    background: green;
+    background:#757780;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;

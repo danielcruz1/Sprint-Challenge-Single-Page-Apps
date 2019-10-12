@@ -5,7 +5,7 @@ const SearchBar = styled.section`
   margin: 20px auto;
   `;
  
-function SearchForm ({ handleChange, searchTerm})
+function SearchForm ({ handleChange, searchTerm}) {
   return (
     <SearchBar className='search-form'>
       <input id='name' type='text' name='textfield' placeholder='Search Character List' value={searchTerm} onChange={handleChange} />  

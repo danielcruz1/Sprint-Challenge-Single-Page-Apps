@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { Link, Route } from 'react-router-dom';
 import CharacterCard from './CharacterCard';
+import Character from './Character';
 import SearchForm from "./SearchForm";
 
 function CharacterList(props) {
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([]);
-  console.log('characters', characters);
+ 
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
@@ -35,20 +37,18 @@ function CharacterList(props) {
 
   return (
     <div>
-    <h2>Characters from the show:</h2>
+    <h2>Characters:</h2>
     <SearchForm handleChange={handleChange} searchTerm={searchTerm} />
     <section className="character-list">
     ))}	        
       {characters.map(character => (
-        <CharacterCard {...props} key={character.id} character={character} />
+        <Link key={character.id} to={`/character-list/${character.id}`}>
+         <CharacterCard {...props} key={character.id} character={character}/>
+        </Link>
       ))}
     </section>
   </div>
   );	
 }	
-
-function CharacterDetails({ character }) {
-  return <CharacterCard character={character} />;
-}
 
 export default CharacterList;
