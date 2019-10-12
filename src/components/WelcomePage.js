@@ -1,6 +1,12 @@
 import React from "react";
+import styled from "styled-components";
 
-export default function WelcomePage() {
+export default function WelcomePage(props) {
+  const routeToCharacters = event => {
+    event.preventDefault();
+    props.history.push("/character-list");
+  };
+
   return (
     <section className="welcome-page">
       <header>
@@ -10,6 +16,10 @@ export default function WelcomePage() {
           src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
           alt="rick"
         />
+
+        <button onClick={routeToCharacters} className="md-button shop-button">
+          See Characters!
+        </button>
       </header>
     </section>
   );
