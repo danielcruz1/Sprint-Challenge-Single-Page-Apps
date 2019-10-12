@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: The benefits of client side routing include more control of site URL and content without having to wait for a server to respond with content, and being able to use JavaScript to maintain "State" (memory within an application) to tell the browser what to display when a resource is requested. This whole process allows for a much smoother user experience by creating shortened wait time to see content. (TK - Web Applications I, Single Page Applications, React Router I)
 
 ## Project Set Up
 
